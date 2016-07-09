@@ -1,0 +1,6 @@
+#!/bin/bash
+
+make modules_install
+make firmware_install
+cp -v arch/x86_64/boot/bzImage /boot/vmlinuz
+mkinitcpio -k `cat include/config/kernel.release` -g /boot/initramfs-vmlinuz.img
