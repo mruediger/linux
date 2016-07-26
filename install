@@ -6,4 +6,5 @@ make modules_install
 make firmware_install
 cp -v arch/x86_64/boot/bzImage /boot/vmlinuz
 mkinitcpio -k $KERNEL -g /boot/initramfs-vmlinuz.img
+dkms uninstall -m vboxhost -v 5.1.0_OSE -k $KERNEL
 dkms install -m vboxhost -v 5.1.0_OSE -k $KERNEL
